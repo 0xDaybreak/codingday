@@ -8,34 +8,42 @@ pub fn hello() -> String {
     unimplemented!()
 }
 
+
 // 2. Mutability
-pub fn add_one(mut x: i32) -> i32 {
-    // TODO: increase x by 1
+pub fn add_one() {
+    // TODO: declare x = 5
+    // TODO: return x + 1
     unimplemented!()
 }
 
 // 3. Ownership basics
-pub fn move_string() -> String {
-    let s1 = String::from("hello");
-    // TODO: return s1 without causing a move error
+#[derive(Debug)]
+struct User {
+    id: u32,
+}
+
+pub fn print_u() {
+    //TODO: fix this compile error
+    let u = User{id:1};
+    let u2 = u;
+    println!("{:?}", u);
     unimplemented!()
 }
 
 // 4. Borrowing
-pub fn borrow_string(s: &String) -> usize {
-    // TODO: return the length of s
+pub fn borrow_user() {
+    //TODO: print user u twice
+    let u = User{id: 123};
+    print_user();
+    print_user();
     unimplemented!()
 }
-
-// 5. Functions & ownership
-pub fn print_and_return(s: String) -> String {
-    // TODO: print s, then return it so caller still owns it
-    unimplemented!()
+fn print_user(u: &User) {
+    println!("{:?}", u);
 }
 
-// 6. Structs & methods
+// 5. Structs & methods
 pub struct Rectangle {
-    // TODO: add width and height fields
 }
 
 impl Rectangle {
@@ -45,15 +53,15 @@ impl Rectangle {
     }
 }
 
-// 7. Collections (vector)
+// 6. Collections (vector)
 pub fn sum_vector(v: Vec<i32>) -> i32 {
     // TODO: return the sum of all numbers
     unimplemented!()
 }
 
-// 8. Pattern matching
+// 7. Pattern matching
 pub enum Direction {
-    // TODO: Up, Down, Left, Right
+    // TODO: add directions
 }
 
 pub fn direction_message(dir: Direction) -> &'static str {
@@ -61,12 +69,13 @@ pub fn direction_message(dir: Direction) -> &'static str {
     unimplemented!()
 }
 
-// 9. Option & Result
+// 8. Option
 pub fn get_option_value(opt: Option<i32>) -> i32 {
     // TODO: return value if Some, else return 0
     unimplemented!()
 }
 
+// 9. Result
 pub fn safe_divide(a: i32, b: i32) -> Result<i32, &'static str> {
     // TODO: divide, or return Err if b == 0
     unimplemented!()
