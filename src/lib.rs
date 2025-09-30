@@ -4,7 +4,8 @@
 
 // 1. Hello Rust!
 pub fn hello() -> String {
-    "Hello, Rust!".to_string()
+    // TODO: return "Hello, Rust!"
+    unimplemented!()
 }
 
 // 2. Mutability
