@@ -4,6 +4,11 @@ fn test_borrow_user() {
 }
 
 // 4. Borrowing
+#[derive(Debug)]
+struct User {
+    id: u32,
+}
+
 pub fn borrow_user() {
     //TODO: print user u twice
     let u = User { id: 123 };
